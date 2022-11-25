@@ -15,34 +15,14 @@ void Array(int[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            array[i, j] = new Random().Next(0, 11);
+            array[i, j] = new Random().Next(-20, 21);
             Console.Write(String.Format("{0,5}", array[i, j]));// вывод значений с отступом
         }
         Console.WriteLine();
     }
 }
-/*
-void NewStringArray(int[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 1; j < array.GetLength(1); j++)
-        {
-            int max = array[i, j];
-            int index = j - 1;
 
-            while (index >= 0 && array[i, index] > max)
-            {
-                array[i, index + 1] = array[i, j];
-                //array[i, j] = max;
-                index--;
-            }
-            array[i, index + 1] = max;
-        }
-    }
-    Console.WriteLine();
-}
-*/
+
 void NewStringArray(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
@@ -71,7 +51,7 @@ int[,] array = new int[m, n];
 
 Console.WriteLine($"\nСгенерирован следующий двумерный массив чисел:");
 Array(array);
-Console.Write($"\nНовый массив: ");
+Console.Write($"\nНовый упорядоченный массив: ");
 NewStringArray(array);
 
 for (int i = 0; i < array.GetLength(0); i++)
