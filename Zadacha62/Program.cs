@@ -55,13 +55,14 @@ void WriteArray(int[,] array)
     }
 }
 
-
+Console.WriteLine();
 Console.Write("Введите число размерности квадратного двумерного массива:  ");
 int m = Convert.ToInt32(Console.ReadLine());
 
 int[,] array = new int[m, m];
 Console.WriteLine($"\nСгенерирован следующий двумерный массив чисел:");
 Array(array);
+Console.WriteLine();
 WriteArray(array);
-
+Console.WriteLine();
 
