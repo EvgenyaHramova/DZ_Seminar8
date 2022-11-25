@@ -26,7 +26,7 @@ void MinSummaElement(int[,] array)
         {
             sum = sum + array[i, j];
         }
-        Console.WriteLine($"Сумма элементов в строке {i + 1} (с индексом [{i}]) массива равна {sum}");
+        //Console.WriteLine($"Сумма элементов в строке {i + 1} (с индексом [{i}]) массива равна {sum}");
 
         if (i == 0)
         {
@@ -50,6 +50,6 @@ int[,] array = new int[m, n];
 
 Console.WriteLine($"\nСгенерирован следующий двумерный массив чисел:");
 Array(array);
-Console.WriteLine();
+
 MinSummaElement(array);
 Console.WriteLine();
