@@ -17,13 +17,21 @@ void Array(int[,] array) //заполнение массива
         array[i, j] = temp;
         temp++;
         if (i <= j + 1 && i + j < array.GetLength(1) - 1)
+        {
             j++;
+        }
         else if (i < j && i + j >= array.GetLength(0) - 1)
+        {
             i++;
+        }
         else if (i >= j && i + j > array.GetLength(1) - 1)
+        {
             j--;
+        }
         else
+        {
             i--;
+        }
     }
 }
 void WriteArray(int[,] array)
@@ -33,15 +41,15 @@ void WriteArray(int[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            if (array[i,j]/10==0)
+            if (array[i, j] / 10 == 0)
             {
                 Console.Write(String.Format("{0,5}", $"0{array[i, j]}"));
             }
             else
             {
-                 Console.Write(String.Format("{0,5}", array[i, j]));
+                Console.Write(String.Format("{0,5}", array[i, j]));
             }
-           
+
         }
         Console.WriteLine();
     }
