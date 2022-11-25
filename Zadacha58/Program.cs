@@ -48,26 +48,27 @@ int[,] ProductMatrices(int[,] matrixOne, int[,] matrixTwo)
 
     for (int i = 0; i < matrixOne.GetLength(0); i++)
     {
-         for (int j = 0; j < matrixTwo.GetLength(1); j++)
+        for (int j = 0; j < matrixTwo.GetLength(1); j++)
         {
-           int sum = 0;
+            int sum = 0;
             for (int k = 0; k < matrixOne.GetLength(1); k++)
-            {            
-                sum = sum + (matrixOne[i, k] * matrixTwo[k, j]);              
+            {
+                sum = sum + (matrixOne[i, k] * matrixTwo[k, j]);
             }
             resultMatrix[i, j] = sum;
         }
     }
-/*
-    for (int i = 0; i < resultMatrix.GetLength(0); i++)
-    {
-        for (int j = 0; j < resultMatrix.GetLength(1); j++)
+    /* если применить тип метода void
+        for (int i = 0; i < resultMatrix.GetLength(0); i++)
         {
-            Console.Write(String.Format("{0,5}", resultMatrix[i, j]));// вывод значений с отступом
+            for (int j = 0; j < resultMatrix.GetLength(1); j++)
+            {
+                Console.Write(String.Format("{0,5}", resultMatrix[i, j]));// вывод значений с отступом
+            }
+            Console.WriteLine();
         }
-        Console.WriteLine();
-    }*/
-   return resultMatrix;
+    */
+    return resultMatrix;
 }
 
 Console.Write("Введите количество строк M1 в первой матрице:  ");
@@ -75,10 +76,12 @@ int m1 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите количество столбцов N1 в первой матрице:  ");
 int n1 = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine();
+
 Console.Write("Введите количество строк M2 во второй матрице:  ");
 int m2 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите количество столбцов N2 во второй матрице:  ");
 int n2 = Convert.ToInt32(Console.ReadLine());
+
 if (n1 != m2)
 {
     Console.WriteLine("\nКоличество столбцов первой матрицы N1 должно быть равно количеству строк М2 второй матрицы.");
@@ -93,12 +96,10 @@ MatrixOne(matrixOne);
 
 Console.WriteLine($"\nВторая матрица:");
 MatrixTwo(matrixTwo);
-//Console.WriteLine();
+
 
 Console.WriteLine($"\nРезультат произведения двух матриц:");
 ProductMatrices(matrixOne, matrixTwo);
-//Console.WriteLine();
-
 
 int[,] resultMatrix = ProductMatrices(matrixOne, matrixTwo);
 for (int i = 0; i < resultMatrix.GetLength(0); i++)
