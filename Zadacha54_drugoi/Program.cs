@@ -15,7 +15,7 @@ void Array(int[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            array[i, j] = new Random().Next(-10, 11);
+            array[i, j] = new Random().Next(-20, 21);
             Console.Write(String.Format("{0,5}", array[i, j]));// вывод значений с отступом
         }
         Console.WriteLine();
@@ -29,7 +29,7 @@ void NewStringArray(int[,] array)
         for (int j = 0; j < array.GetLength(1); j++)
         {
             int maxIndex = j;
-            //int max = array[i, j];
+            
             for (int k = j; k < array.GetLength(1); k++)
             {
                 if (array[i, maxIndex] < array[i, k])
